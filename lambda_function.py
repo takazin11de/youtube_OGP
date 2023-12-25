@@ -8,7 +8,7 @@ def lambda_handler(event, context):
 
     if len(v_id)==0:
         return make()
-        
+    v_id=v_id.replace('_c_', '-')
     v_id=v_id.replace('_b_', '/')
     v_id=v_id.replace('_a_', '_')
 
@@ -72,9 +72,9 @@ function conv(){
   document.getElementById('input2').value= "";
   input1=document.getElementById('input1').value;
 
-  input11 =input1.match(/youtube\.com\/watch\?v=(\w*)/)
-  input12 =input1.match(/youtu\.be\/(\w*)/)
-  input13 =input1.match(/youtube\.com\/live\/(\w*)/)
+  input11 =input1.match(/youtube\.com\/watch\?v=((\w|-)*)/)
+  input12 =input1.match(/youtu\.be\/((\w|-)*)/)
+  input13 =input1.match(/youtube\.com\/live\/((\w|-)*)/)
   input14 =input1.match(/nicovideo\.jp\/watch\/(\w*)/) //movie,live
   input15 =input1.match(/nicovideo\.jp\/seiga\/(\w*)/) //seiga
   input16 =input1.match(/note\.com\/((\w|\/)*)/) //note.com
@@ -101,6 +101,7 @@ function conv(){
   if(input1_!=null){
     input1_=input1_.split(`_`).join(`_a_`);
     input1_=input1_.split(`\/`).join(`_b_`);
+    input1_=input1_.split(`-`).join(`_c_`);
   }
   document.getElementById('input2').value= "https://videotmb.net/" + input1_;
   copy();
