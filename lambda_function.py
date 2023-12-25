@@ -159,7 +159,7 @@ function copy(){
 <p>YouTubeライブ配信</p>
 <p>「https://www.youtube.com/live/******」</p>
 <p>note.com</p>
-<p>「https://note.com/******/*/*****」*</p>
+<p>「https://note.com/******/*/******」</p>
 <p>ニコニコ動画</p>
 <p>「https://www.nicovideo.jp/watch/sm******」</p>
 <p>ニコニコ生放送</p>
